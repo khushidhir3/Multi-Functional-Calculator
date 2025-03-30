@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="flex justify-center items-center bg-pink-700">
+    <h1 class="text-4xl text-pink-300 font-bold text-center mb-10 mr-9"> CALCULATOR </h1>
+    <div id="simple-calculator" class="bg-black p-7 rounded-lg shadow-lg shadow-black w-96 mt-48 h-96 flex flex-col justify-between">
+        <label for="display" class="sr-only">Calculator Display</label>
+        <input type="text" id="display" class="w-full text-right text-pink-300 text-3xl p-3 rounded mb-3" placeholder="0" disabled>
+        <div class="grid grid-cols-4 gap-2"> 
+            <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">AC</button>
+            <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">+/-</button>
+            <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">%</button>
+            <button class="bg-pink-500 text-black p-2 rounded-full shadow-lg shadow-pink-900">÷</button>
+            <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">7</button>
+            <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">8</button>
+            <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">9</button>
+            <button class="bg-pink-500 text-black p-2 rounded-full shadow-lg shadow-pink-900">x</button>
+            <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">4</button>
+            <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">5</button>
+            <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">6</button>
+            <button class="bg-pink-500 text-black p-2 rounded-full shadow-lg shadow-pink-900">-</button>
+            <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">1</button>
+            <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">2</button>
+            <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">3</button>
+            <button class="bg-pink-500 text-black p-2 rounded-full shadow-lg shadow-pink-900">+</button>
+            <button id="menubtn" class="bg-pink-500 text-black p-2 rounded-full shadow-lg shadow-pink-900 flex items-center justify-center" >
+                <img src="cutie.png" alt="calculator" class="w-7 h-7">
+            </button>
+            <div id="menu" class="hidden bg-pink-700 rounded-lg p-3 w-64 absolute transform -translate-x-1/2 z-50 shadow-lg">
+                <ul>
+                    <li class="p-2 bg-pink-700 hover:border-3 hover:border-black rounded-lg hover:bg-pink-500 text-black">Age Calculator</li>
+                    <li class="p-2 cursor-pointer hover:border-3 hover:border-black rounded-lg hover:bg-pink-500 text-black">Currency Converter</li>
+                    <li class="p-2 cursor-pointer hover:border-3 hover:border-black rounded-lg hover:bg-pink-500 text-black">BMI Calculator</li>
+                    <li class="p-2 cursor-pointer hover:border-3 hover:border-black rounded-lg hover:bg-pink-500 text-black">Weight Converter</li>
+                    <li class="p-2 cursor-pointer hover:border-3 hover:border-black rounded-lg hover:bg-pink-500 text-black">Temperature Converter</li>
+                    <li class="p-2 cursor-pointer hover:border-3 hover:border-black rounded-lg hover:bg-pink-500 text-black">Decimal to Binary Converter</li>
+                    <li class="p-2 cursor-pointer hover:border-3 hover:border-black rounded-lg hover:bg-pink-500 text-black">Scientific Calculator</li>
+                    <li class="p-2 cursor-pointer hover:border-3 hover:border-black rounded-lg hover:bg-pink-500 text-black">Loan Calculator</li>
+                    <li class="p-2 cursor-pointer hover:border-3 hover:border-black rounded-lg hover:bg-pink-500 text-black">Area and Volume Calculator</li>
+                    <li class="p-2 cursor-pointer hover:border-3 hover:border-black rounded-lg hover:bg-pink-500 text-black">Data Converter</li>
+                    <li class="p-2 cursor-pointer hover:border-3 hover:border-black rounded-lg hover:bg-pink-500 text-black">Time Converter</li>
+                </ul>
+            </div>
+            
+            <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">0</button>
+            <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">.</button>
+            <button class="bg-pink-500 text-black p-2 rounded-full shadow-lg shadow-pink-900">=</button>
+        </div>
+        </div>
+        
+        <div id="age-calculator" class="hidden">
+            <div class="bg-black p-7 rounded-lg shadow-lg shadow-black w-96 mt-48 h-96 flex flex-col justify-between">
+            <h2 class="text-2xl text-pink-300 font-bold text-center mb-4"> Age Calculator</h2>
+            <label for="dob" class="text-2xl text-pink-700 border-3 border-pink-700 p-3 rounded-lg shadow-lg shadow-pink-900">Enter Your Date of Birth</label>
+            <input type="date" id="dob" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900" >
+           <button id="calculate" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">Calculate Age </button> 
+           <p id="age-result" class="text-pink-300"></p>
+        </div>
+        </div>
+        <div id="bmi-calculator" class="hidden">
+            <div class="bg-black p-7 rounded-lg shadow-lg shadow-black w-96 mt-32 h-96 flex flex-col justify-between">
+            <h2 class="text-2xl text-pink-300 font-bold text-center mb-4 flex items-center justify-center">
+            <img src="cutie1.png" class="w-7 h-7 mr-2" alt="BMI Calculator Icon">
+            BMI Calculator
+            <img src="cutie1.png" class="w-7 h-7 ml-2" alt="BMI Calculator Icon">
+            </h2>
+            <div class="flex flex-col mb-4"></div>
+            <label for="weight" class="text-2xl text-pink-700 border-3 border-pink-700 p-3 rounded-lg shadow-lg shadow-pink-900 mb-2">Enter Your Weight (kg)</label>
+            <input type="number" id="weight" placeholder="e.g. 70" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-2">
+            <label for="height" class="text-2xl text-pink-700 border-3 border-pink-700 p-3 rounded-lg shadow-lg shadow-pink-900  mb-2">Enter Your Height (cm)</label>
+            <input type="number" id="height" placeholder="e.g., 170" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-2">
+            <button onclick="calculateBMI()" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">Calculate BMI</button>
+            <p id="bmi-result" class="text-pink-300"></p>
+            </div>
+        </div>
+        <div id="weight-converter" class="hidden">
+            <div class="bg-black p-7 rounded-lg shadow-lg shadow-black w-112 mt-32 h-112 flex flex-col justify-between">
+            <h2 class="text-2xl text-pink-300 font-bold text-center mb-4"> Weight Converter</h2>
+            <label for="weight" class="text-2xl text-pink-700 border-3 border-pink-700 p-3 rounded-lg shadow-lg shadow-pink-900 mb-2">Enter Your Weight (kg)</label>
+            <input type="text" id="convert-weight" placeholder="e.g. 70" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-1">
+            <label>From:</label>
+           <label for="from-unit" class="text-pink-700">Select the unit to convert from:</label>
+            <select id="from-unit" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-2">
+                <option value="kg">Kilograms</option>
+               <option value="lb">Pounds</option>
+                <option value="oz">Ounces</option>   
+                </select>
+                <label>To:</label>
+                <label for="to-unit" class="text-pink-700">Select the unit to convert to:</label>
+                <select id="to-unit" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-2" title="Select the unit to convert to">
+                <option value="kg">Kilograms</option>
+                <option value="lb">Pounds</option>
+                <option value="oz">Ounces</option>
+                </select>
+            <button onclick="convertWeight()" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">Convert</button>
+            <p id="weight-result" class="text-pink-300"></p>
+            </div>
+        </div>
+        <div id="temperature-converter" class="hidden">
+            <div class="bg-black p-7 rounded-lg shadow-lg shadow-black w-112 mt-32 h-112 flex flex-col justify-between">
+            <h2 class="text-2xl text-pink-300 font-bold text-center mb-4"> Temperature Converter</h2>
+            <label for="weight" class="text-2xl text-pink-700 border-3 border-pink-700 p-3 rounded-lg shadow-lg shadow-pink-900 mb-2">Enter The Temperature</label>
+            <input type="text" id="convert-tempe" placeholder="e.g. 70" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-1">
+            <label>From:</label>
+           <label for="from-temp" class="text-pink-700">Select the unit to convert from:</label>
+            <select id="from-tempe" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-2" title="Select the temperature unit to convert from">
+                <option value="C">Celcius</option>
+               <option value="F">Fahrenheit</option>
+                <option value="K">Kelvin</option>   
+                </select>
+                <label>To:</label>
+                <label for="to-temp" class="text-pink-700">Select the unit to convert to:</label>
+                <select id="to-tempe" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-2" title="Select the unit to convert to">
+                    <option value="C">Celcius</option>
+                    <option value="F">Fahrenheit</option>
+                     <option value="K">Kelvin</option>
+                </select>
+            <button onclick="convertTemperature()" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">Convert</button>
+            <p id="tempe-result" class="text-pink-300"></p>
+            </div>
+        </div>
+        <div id="decimal-binary-converter" class="hidden">
+            <div class="bg-black p-7 rounded-lg shadow-lg shadow-black w-112 mt-32 h-112 flex flex-col justify-between">
+            <h2 class="text-2xl text-pink-300 font-bold text-center mb-4"> Decimal to Binary Converter</h2>
+            <select id="decimal-binary" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-2" title="Select the decimal number to convert to binary">
+                <option value="binarytodecimal">Binary To Decimal</option>
+                <option value="decimaltobinary">Decimal To Binary</option>
+                </select>
+            <label for="weight" class="text-2xl text-pink-700 border-3 border-pink-700 p-3 rounded-lg shadow-lg shadow-pink-900 mb-2">Enter The Number</label>
+            <input type="text" id="currency-amount" placeholder="Enter" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-1">
+            <button onclick="convertkrtehh()" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">Convert</button>
+            <p id="decimal-result" class="text-pink-300"></p>
+            </div>
+        </div>
+        <div id="currency-converter" class="hidden">
+            <div class="bg-black p-7 rounded-lg shadow-lg shadow-black w-112 mt-32 h-112 flex flex-col justify-between">
+            <h2 class="text-2xl text-pink-300 font-bold text-center mb-4"> Currency Converter</h2>
+            <label for="weight" class=" text-pink-700   ">Enter The Amount</label>
+            <input type="text" id="convertkroekbarfir"placeholder="Enter" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-1">
+            <label>From:</label>
+           <label for="from-currency" class="text-pink-700">Select the currency to convert from:</label>
+            <select id="from-currency" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-2" title="Select the currency to convert from">
+                <option value="USD">US Dollar</option>
+               <option value="EUR">Euro</option>
+                <option value="INR">Indian Rupee</option>   
+                </select>
+                <label>To:</label>
+                <label for="to-currency" class="text-pink-700">Select the currency to convert to:</label>
+                <select id="to-currency" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-2" title="Select the currency to convert to">
+                    <option value="USD">US Dollar</option>
+                    <option value="EUR">Euro</option>
+                    <option value="INR">Indian Rupee</option>  
+                </select>
+            <button onclick="convertCurrency()" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">Convert</button>
+            <p id="currency-result" class="text-pink-300"></p>
+            </div>
+        </div>
+        <div id="scientific-calculator" class=" hidden bg-black p-7 rounded-lg shadow-lg shadow-black w-96 mt-48 h-auto flex flex-col justify-between">
+            <label for="display" class="sr-only">Scientific Calculator </label>
+            <input type="text" id="display1" class="w-full text-right text-pink-300 text-3xl p-3 rounded mb-3" placeholder="0" disabled>
+            <div class="grid grid-cols-5 gap-2">
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">AC</button>
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">+/-</button>
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">%</button>
+               
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">π</button>
+                <button class="bg-pink-500 text-black p-2 rounded-full shadow-lg shadow-pink-900">÷</button>
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">7</button>
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">8</button>
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">9</button>
+                
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">e</button>
+                <button class="bg-pink-500 text-black p-2 rounded-full shadow-lg shadow-pink-900">x</button>
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">4</button>
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">5</button>
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">6</button>
+               
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">sin</button>
+                <button class="bg-pink-500 text-black p-2 rounded-full shadow-lg shadow-pink-900">-</button>
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">1</button>
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">2</button>
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">3</button>
+                
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">cos</button>
+                <button class="bg-pink-500 text-black p-2 rounded-full shadow-lg shadow-pink-900">+</button>
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">tan</button>
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">0</button>
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">.</button>
+               
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">ln</button>
+                <button class="bg-pink-500 text-black p-2 rounded-full shadow-lg shadow-pink-900 row-span-2">=</button>
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">log</button>
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">√</button>
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">x²</button>
+                <button class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">xⁿ</button>
+            </div>
+        </div>
+        <div id="sici" class="hidden">
+            <div class="bg-black p-7 rounded-lg shadow-lg shadow-black w-112 mt-32 h-112 flex flex-col justify-between">
+            <h2 class="text-2xl text-pink-300 font-bold text-center mb-4">Loan Calculator</h2>
+            <label for="principal" class=" block text-pink-700   ">Principal Amount</label>
+            <input type="text" id="principal"placeholder="Enter amount" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-1">
+            <label for="rate" class=" block text-pink-700 mb-2 mt-2  ">Rate of Interst </label>
+            <input type="text" id="rate"placeholder="Enter Rate of interst" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-1">
+            <label for="time" class=" block text-pink-700 mb-2 mt-2  ">Time </label>
+            <input type="text" id="time"placeholder="Enter Time" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-1">
+            <button onclick="calcusi()" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-2 border-3 border-black">Calculate SI</button>
+            <button onclick="calcuci()" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900  border-3 border-black">Calculate CI</button>   
+       
+            <p id="siciresult" class="text-pink-300"></p>
+
+            </div>
+        </div>
+        <div id="areavolume-calculator" class="hidden">
+            <div class=" p-7 rounded-lg shadow-lg shadow-black w-112 mt-32 h-129 flex flex-col justify-between">
+            <h2 class="text-2xl text-pink-300 font-bold text-center mb-4">Area and Volume Calculator</h2>
+            <label class=" block text-pink-700 mb-2 mt-2  ">Select Shape</label>
+
+            <select id="shape" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-2" onchange="updateinputs()" title="Select the shape to calculate area or volume">
+                <option value="">Select Shape</option>               
+                <option value="rectangle">Rectangle</option>
+                <option value="circle">Circle</option>
+                <option value="triangle">Triangle</option>
+                <option value="cuboid">Cuboid</option>
+                <option value="sphere">Sphere</option>
+                <option value="cylinder">Cylinder</option>
+                <option value="cone">Cone</option>
+                <option value="square">Square</option>
+                </select>
+                <div id="parameters"class="mt-3"></div>
+           
+            <button onclick="calcArea()" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-2 border-3 border-black">Calculate Area</button>
+            <button onclick="calcVolume()" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900  border-3 border-black">Calculate Volume</button>   
+       
+            <p id="arearesult" class="text-pink-300"></p>
+            <p id="volumeresult" class="text-pink-300"></p> 
+            </div>
+        </div>
+        <div id="Time-Converter"class="hidden">
+            <div class="bg-black p-7 rounded-lg shadow-lg shadow-black w-112 mt-32 h-112 flex flex-col justify-between">
+            <h2 class="text-2xl text-pink-300 font-bold text-center mb-4">Time Converter</h2>
+            <label for="weight" class=" text-pink-700   ">Enter The Time</label>
+            <input type="text" id="convert-time"placeholder="Enter" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-1">
+            <label>From:</label>
+           <label for="from-time" class="text-pink-700">Select the time unit to convert from:</label>
+            <select id="from-time" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-2" title="Select the time unit to convert from">
+                <option value="seconds">Seconds</option>
+               <option value="minutes">Minutes</option>
+                <option value="hours">Hours</option>   
+                </select>
+                <label>To:</label>
+                <label for="to-time" class="text-pink-700">Select the time unit to convert to:</label>
+                <select id="to-time" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-2" title="Select the time unit to convert to">
+                    <option value="seconds">Seconds</option>
+                    <option value="minutes">Minutes</option>
+                     <option value="hours">Hours</option>
+                </select>
+            <button onclick="convertTime()" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">Convert</button>
+            <p id="time-result" class="text-pink-300"></p>
+            </div>
+        </div>
+        <div id="Data-Converter" class="hidden">
+            <div class="bg-black p-7 rounded-lg shadow-lg shadow-black w-112 mt-32 h-112 flex flex-col justify-between">
+            <h2 class="text-2xl text-pink-300 font-bold text-center mb-4">Data Converter</h2>
+            <label for="weight" class=" text-pink-700   ">Enter The Data</label>
+            <input type="text" id="convert-data"placeholder="Enter" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-1">
+            <label>From:</label>
+           <label for="from-data" class="text-pink-700">Select the data unit to convert from:</label>
+            <select id="from-data" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-2" title="Select the data unit to convert from">
+                <option value="bytes">Bytes</option>
+               <option value="kilobytes">Kilobytes</option>
+                <option value="megabytes">Megabytes</option>   
+                </select>
+                <label>To:</label>
+                <label for="to-data" class="text-pink-700">Select the data unit to convert to:</label>
+                <select id="to-data" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900 mb-2" title="Select the data unit to convert to">
+                    <option value="bytes">Bytes</option>
+                    <option value="kilobytes">Kilobytes</option>
+                     <option value="megabytes">Megabytes</option>
+                </select>
+            <button onclick="convertData()" class="bg-pink-700 text-black p-2 rounded-full shadow-lg shadow-pink-900">Convert</button>
+            <p id="data-result" class="text-pink-300"></p>
+            </div>
+        </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
